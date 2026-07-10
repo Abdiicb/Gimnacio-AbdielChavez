@@ -25,6 +25,8 @@
                     <label for="tipo-membresia">Tipo de Membresía:</label>
                     <select id="tipo-membresia" required>
                         <option value="basico">Plan Básico ($30 USD/mes) - Solo Gym</option>
+                        <option value="estudiante">Plan Estudiante universitario ($25 USD/mes) - Solo Gym en las tardes</option>
+                        <option value="premium">Plan Premium tota ($50 USD/mes) - Gym, alberca y ducha</option>
                         <!-- ERROR/INCOMPLETO: Faltan las opciones "estudiante" ($25 USD/mes) y "premium" ($50 USD/mes) -->
                     </select>
                 </div>
@@ -39,6 +41,9 @@
                         <label>
                             <input type="radio" name="periodo" value="6"> 6 Meses (10% descuento total)
                         </label>
+                        <label>
+                            <input type="radio" name="periodo" value="12"> 12 Meses (20% descuento total)
+                        </label>
                         <!-- ERROR/INCOMPLETO: Falta la opción de 12 Meses (20% descuento total) -->
                     </div>
                 </div>
@@ -52,6 +57,9 @@
                         </label>
                         <label>
                             <input type="checkbox" name="adicional" value="nutricion"> Asesoría Nutricional mensual (+$15 USD)
+                        </label>
+                        <label>
+                            <input type="checkbox" name="adicional" value="nutricion"> Acceso a la Piscina Olimpica (+$10 USD)
                         </label>
                         <!-- ERROR/INCOMPLETO: Falta el servicio de "Acceso a la Piscina Olímpica" (+$10 USD) -->
                     </div>
