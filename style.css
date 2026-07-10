@@ -34,7 +34,7 @@ body {
    Actualmente está en 'block', lo que rompe el diseño responsivo de columnas.
 */
 .main-container {
-    display: block; /* MODIFICAR AQUÍ POR EL ALUMNO */
+    display: flex; /* MODIFICAR AQUÍ POR EL ALUMNO */
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
@@ -75,6 +75,7 @@ body {
     border-radius: 8px;
     border: 1px solid var(--border);
     /* REQUISITO 2B: El alumno debe definir anchos flex adecuados para que se alineen lado a lado en pantallas grandes */
+    flex-wrap: wrap;
     flex: 1 1 450px; 
 }
 
