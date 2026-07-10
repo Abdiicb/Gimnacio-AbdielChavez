@@ -11,7 +11,7 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
     // ERROR EN CAPTURA: El alumno debe capturar correctamente el valor del botón de radio SELECCIONADO.
     // Actualmente solo toma un elemento genérico sin validar cuál está activo (checked).
     // PISTA: Reemplazar por querySelector correcto que busque el input name="periodo" que esté :checked
-    const periodoSeleccionado = document.querySelector('input[name="periodo"]'); 
+    const periodoSeleccionado = document.querySelector('input[name="periodo"]:checked'); 
     const mesesContratacion = parseInt(periodoSeleccionado.value);
 
     // --- REQUISITO 3B: ESTRUCTURA CONDICIONAL LOGICIAL (COMPLETAR) ---
@@ -19,6 +19,14 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
 
     if (tipoMembresia === 'basico') {
         costoBaseMensual = 30;
+    } 
+
+    else if (tipoMembresia === 'estudiante') {
+        costoBaseMensual = 25;
+    } 
+
+    else if (tipoMembresia === 'premium') {
+        costoBaseMensual = 50;
     } 
     // ¡COMPLETAR AQUÍ! El alumno debe agregar las condicionales para 'estudiante' ($25) y 'premium' ($50)
     // utilizando estructuras else if.
@@ -35,6 +43,9 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
         } else if (checkbox.value === 'nutricion') {
             cargosAdicionales += 15;
         }
+        else if (checkbox.value === 'piscina') {
+            cargosAdicionales += 10;
+        }
         // ¡COMPLETAR AQUÍ! El alumno debe agregar la lógica para sumar el costo de la 'piscina' ($10)
         
     });
@@ -44,6 +55,9 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
 
     if (mesesContratacion === 6) {
         porcentajeDescuento = 0.10; // 10% descuento
+    }
+    else if (mesesContratacion === 12) {
+        porcentajeDescuento = 0.20; // 20% descuento
     }
     // ¡COMPLETAR AQUÍ! El alumno debe agregar la lógica para el descuento del 20% si los meses son 12
     
@@ -63,6 +77,6 @@ document.getElementById('btn-calcular').addEventListener('click', function() {
     
     // ERROR / INCOMPLETO: El alumno debe renderizar el 'totalFinalCalculado' con 2 decimales en el elemento correcto del DOM.
     // PISTA: Identificar el id del elemento span que muestra el Total Final en el HTML.
-    // [Escribir código aquí para actualizar el total final]
+    document.getElementById('res-total').innerText =  `$${totalFinalCalculado.toFixed(2)} USD/mes`;
 
-});
+}); 
